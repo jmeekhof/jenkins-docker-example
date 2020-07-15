@@ -16,6 +16,7 @@ pipeline {
         }
 
         stage('build') {
+            /*
             agent {
                 dockerfile {
                     filename 'Dockerfile'
@@ -23,6 +24,7 @@ pipeline {
                     label 'mobycounter'
                 }
             }
+            */
 
             steps{
                 script {
