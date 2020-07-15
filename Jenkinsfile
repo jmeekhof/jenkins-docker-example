@@ -10,15 +10,21 @@ pipeline {
     agent any
     stages {
         stage('Checkout') {
+            steps {
             git url: "https://github.com/jmeekhof/jenkins-docker-example.git"
+            }
         }
 
         stage('build') {
-            docker.build('mobycounter')
+            steps{
+                docker.build('mobycounter')
+            }
         }
 
         stage('deploy') {
-            sh './deploy.sh'
+            steps {
+                sh './deploy.sh'
+            }
         }
     }
 }
