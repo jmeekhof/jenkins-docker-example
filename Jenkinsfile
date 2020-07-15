@@ -27,6 +27,7 @@ pipeline {
             */
 
             steps{
+                sh 'printenv'
                 script {
                     docker.build('mobycounter',"--build-arg npm_config_registry .")
                 }
