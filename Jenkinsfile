@@ -25,7 +25,9 @@ pipeline {
             }
 
             steps{
-                docker.build('mobycounter')
+                script {
+                    docker.build('mobycounter')
+                }
             }
         }
 
