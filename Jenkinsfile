@@ -23,11 +23,10 @@ pipeline {
                     label 'mobycounter'
                 }
             }
-            /*
+
             steps{
                 docker.build('mobycounter')
             }
-            */
         }
 
         stage('deploy') {
