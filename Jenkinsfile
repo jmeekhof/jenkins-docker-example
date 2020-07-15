@@ -1,9 +1,9 @@
 String getRepoName() {
-    return "$GIT_URL".tokenize('/')[3].split("\\.")[0]
+    return "${env.GIT_URL}".tokenize('/')[3].split("\\.")[0]
 }
 
 String getRepoOwnerName() {
-    return "$GIT_URL".tokenize('/')[2].split("\\.")[0]
+    return "${env.GIT_URL}".tokenize('/')[2].split("\\.")[0]
 }
 node {
         stage('Checkout') {
