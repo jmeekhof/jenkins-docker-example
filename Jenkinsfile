@@ -28,7 +28,7 @@ pipeline {
 
             steps{
                 script {
-                    docker.build('mobycounter',"--build-arg npm_config_registry")
+                    docker.build('mobycounter',"--build-arg npm_config_registry .")
                 }
             }
         }
