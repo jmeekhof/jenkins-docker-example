@@ -16,9 +16,18 @@ pipeline {
         }
 
         stage('build') {
+            agent {
+                dockerfile {
+                    filename 'Dockerfile'
+                    dir '.'
+                    label 'mobycounter'
+                }
+            }
+            /*
             steps{
                 docker.build('mobycounter')
             }
+            */
         }
 
         stage('deploy') {
