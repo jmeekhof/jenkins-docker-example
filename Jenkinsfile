@@ -7,7 +7,7 @@ String getRepoOwnerName() {
 }
 node {
         stage('Checkout') {
-            git url: "https://github.com/${getRepoOwnerName()}/jenkins-docker-example.git"
+            git url: "https://github.com/jmeekhof/jenkins-docker-example.git"
         }
 
         stage('build') {
