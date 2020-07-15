@@ -5,7 +5,10 @@ String getRepoName() {
 String getRepoOwnerName() {
     return "${env.GIT_URL}".tokenize('/')[2].split("\\.")[0]
 }
-node {
+
+pipeline {
+    agent any
+    stages {
         stage('Checkout') {
             git url: "https://github.com/jmeekhof/jenkins-docker-example.git"
         }
@@ -17,4 +20,5 @@ node {
         stage('deploy') {
             sh './deploy.sh'
         }
+    }
 }
