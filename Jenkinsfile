@@ -16,20 +16,9 @@ pipeline {
         }
 
         stage('build') {
-            /*
-            agent {
-                dockerfile {
-                    filename 'Dockerfile'
-                    dir '.'
-                    label 'mobycounter'
-                }
-            }
-            */
-
-            steps{
-                sh 'printenv'
+            steps {
                 script {
-                    docker.build('mobycounter',"--build-arg npm_config_registry=${env.npm_config_registry} .")
+                    docker.build('mobycounter',"--build-arg npm_config_registry .")
                 }
             }
         }
